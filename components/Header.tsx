@@ -88,12 +88,12 @@ export default function Header() {
                 onClick={() => setOpen(true)}
                 aria-label="Open menu"
                 aria-expanded={open}
-                className="group -ml-2 flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
+                className="group -ml-2 flex h-10 w-10 flex-col items-center justify-center gap-1.5 xl:hidden"
               >
                 <span className="h-px w-6 bg-current transition-all group-hover:w-4" />
                 <span className="h-px w-6 bg-current" />
               </button>
-              <ul className="hidden items-center gap-1 lg:flex">
+              <ul className="hidden items-center gap-1 xl:flex">
                 {navLinks.slice(0, 4).map((l) => (
                   <NavItem key={l.href} href={l.href} label={l.label} active={active === l.href} light={!scrolled} />
                 ))}
@@ -131,7 +131,7 @@ export default function Header() {
 
       {/* Mobile / tablet drawer */}
       <div
-        className={`fixed inset-0 z-[60] transition-opacity duration-500 lg:hidden ${open ? "opacity-100" : "pointer-events-none opacity-0"}`}
+        className={`fixed inset-0 z-[60] transition-opacity duration-500 xl:hidden ${open ? "opacity-100" : "pointer-events-none opacity-0"}`}
         aria-hidden={!open}
       >
         <div className="absolute inset-0 bg-plum/40 backdrop-blur-sm" onClick={() => setOpen(false)} />
@@ -174,7 +174,7 @@ function NavItem({ href, label, active, light }: { href: string; label: string; 
       <a
         href={href}
         aria-current={active ? "page" : undefined}
-        className={`relative flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[0.66rem] font-semibold uppercase tracking-[0.2em] transition-all duration-300 ${
+        className={`relative flex items-center gap-1.5 whitespace-nowrap rounded-full px-3.5 py-2 text-[0.66rem] font-semibold uppercase tracking-[0.2em] transition-all duration-300 ${
           active
             ? light
               ? "bg-champagne text-plum"
