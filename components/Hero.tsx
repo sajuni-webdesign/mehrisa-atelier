@@ -1,4 +1,5 @@
 import HeroVideo from "./HeroVideo";
+import DemoButton from "./DemoButton";
 import { IconArrow, IconCalendar } from "./Icons";
 
 export default function Hero() {
@@ -13,7 +14,7 @@ export default function Hero() {
       <div aria-hidden className="absolute inset-0 z-10 bg-plum/30 lg:hidden" />
       <div aria-hidden className="absolute inset-y-0 right-0 z-10 hidden w-[30%] bg-gradient-to-l from-plum/75 via-plum/30 to-transparent lg:block" />
 
-      <div className="container-lux relative z-20 flex min-h-[100svh] flex-col justify-end pb-20 pt-32 sm:pb-24 lg:justify-center lg:pb-20 lg:pt-36 [@media(max-height:820px)]:lg:pt-32">
+      <div className="container-lux relative z-20 flex min-h-[100svh] flex-col justify-end pb-20 pt-[11.5rem] sm:pb-24 sm:pt-[10.5rem] lg:justify-center lg:pb-20 lg:pt-44 [@media(max-height:820px)]:lg:pt-[10.5rem]">
         <div className="max-w-[40rem]">
           <p className="intro-fade inline-flex items-center gap-2.5 whitespace-nowrap rounded-full border border-champagne/30 bg-plum/25 px-4 py-2 text-[0.58rem] font-semibold uppercase tracking-[0.22em] text-champagne backdrop-blur-md sm:text-[0.64rem] sm:tracking-[0.3em]" style={{ ["--delay" as string]: "150ms" }}>
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-rose" />
@@ -45,13 +46,13 @@ export default function Hero() {
           </p>
 
           <div className="intro-fade mt-8 flex flex-wrap items-center gap-3 sm:gap-4" style={{ ["--delay" as string]: "950ms" }}>
-            <a href="#collections" className="btn btn-light btn-shine btn-shine-gold btn-glow btn-nudge">
+            <DemoButton className="btn btn-light btn-shine btn-shine-gold btn-glow btn-nudge">
               Explore Collections <IconArrow />
-            </a>
+            </DemoButton>
             <span className="relative inline-flex">
-              <a href="#bespoke" className="btn btn-halo-dark btn-wiggle text-champagne hover:text-plum">
+              <DemoButton className="btn btn-halo-dark btn-wiggle text-champagne hover:text-plum">
                 <IconCalendar /> Book a Bridal Visit
-              </a>
+              </DemoButton>
               <span className="pointer-events-none absolute -top-2.5 right-6 flex items-center gap-1.5 rounded-full bg-rose px-2.5 py-1 text-[0.52rem] font-bold uppercase tracking-[0.18em] text-plum shadow-lg">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-plum" /> Complimentary
               </span>
@@ -70,6 +71,9 @@ export default function Hero() {
               </div>
             ))}
           </dl>
+          <p className="intro-fade mt-3 hidden text-[0.7rem] italic text-ivory/60 sm:block" style={{ ["--delay" as string]: "1150ms" }}>
+            Sample figures for demonstration.
+          </p>
         </div>
       </div>
 

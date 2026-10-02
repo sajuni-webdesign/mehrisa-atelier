@@ -2,16 +2,16 @@ import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 import { IconArrow, IconWhatsApp } from "./Icons";
 import { site } from "@/lib/site";
+import DemoButton from "./DemoButton";
 
 const steps = [
-  { t: "Consult", d: "A private styling session — in our Kolkata salon or on video — to understand your occasion, palette and personality.", time: "Day 1" },
+  { t: "Consult", d: "A private styling session — in the salon or on video — to understand your occasion, palette and personality.", time: "Day 1" },
   { t: "Design", d: "Hand-drawn sketches, fabric swatches and embroidery samplers, refined with you until it feels unmistakably yours.", time: "Week 1–2" },
   { t: "Craft", d: "Our karigars hand-embroider your piece on traditional adda frames — you receive progress films along the way.", time: "Week 3–10" },
   { t: "Fit & Celebrate", d: "Two couture fittings, final pressing and a hand-delivered keepsake trunk. Then — you shine.", time: "Your day" },
 ];
 
 export default function Bespoke() {
-  const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hello Mehrisa! I'd love to book a bespoke consultation.")}`;
   return (
     <section id="bespoke" aria-labelledby="bespoke-title" className="relative py-24 lg:py-36">
       <div className="container-lux">
@@ -42,11 +42,11 @@ export default function Bespoke() {
         </ol>
 
         <Reveal delay={200} className="mt-16 flex flex-wrap justify-center gap-4">
-          <a href={`mailto:${site.email}?subject=Bespoke%20appointment`} className="btn btn-primary btn-shine">
+          <DemoButton className="btn btn-primary btn-shine">
             Book an appointment <IconArrow />
-          </a>
-          <a href={wa} target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-wiggle">
-            <IconWhatsApp width={18} height={18} /> Chat on WhatsApp
+          </DemoButton>
+          <a href={site.whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-wiggle">
+            <IconWhatsApp width={18} height={18} /> Chat with Sajuni
           </a>
         </Reveal>
       </div>

@@ -64,6 +64,13 @@ export default function Header() {
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-50">
+        {/* Demo strip — always visible, labels this as a portfolio demo */}
+        <p className="border-b border-champagne/20 bg-plum px-4 py-2 text-center font-sans text-[0.75rem] leading-snug tracking-[0.04em] text-ivory/90 sm:text-[0.8rem]">
+          This is a demo website designed by Sajuni<span className="hidden sm:inline"> ·</span>{" "}
+          <a href={site.designerUrl} target="_blank" rel="noopener" className="whitespace-nowrap font-semibold text-champagne underline decoration-champagne/50 underline-offset-4 transition-colors hover:text-ivory">
+            Get a website like this →
+          </a>
+        </p>
         {/* Announcement ribbon */}
         <div
           className={`overflow-hidden whitespace-nowrap bg-wine text-center text-[0.56rem] font-medium uppercase tracking-[0.16em] text-champagne transition-all duration-500 sm:text-[0.66rem] sm:tracking-[0.28em] ${
@@ -159,6 +166,7 @@ export default function Header() {
           </ul>
           <div className="mt-auto space-y-2 border-t border-petal pt-6 text-sm text-muted">
             <p>{site.hours}</p>
+            <p className="text-[0.7rem] italic text-muted/80">Sample opening hours for demonstration.</p>
             <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="block text-wine">{site.phone}</a>
           </div>
         </aside>

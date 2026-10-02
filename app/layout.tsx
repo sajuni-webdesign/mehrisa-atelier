@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Manrope, Pinyon_Script } from "next/font/google";
 import "./globals.css";
-import { site, products, faqs } from "@/lib/site";
+import { site } from "@/lib/site";
 import { StoreProvider } from "@/components/StoreProvider";
 
 const cormorant = Cormorant_Garamond({
@@ -26,16 +26,16 @@ const pinyon = Pinyon_Script({
   preload: false,
 });
 
-const title = `${site.name} — Luxury Bridal Lehengas, Sarees & Indian Couture Boutique`;
+const title = "Boutique & Bridal Fashion Website Design Demo | Sajuni";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: { default: title, template: `%s | ${site.name}` },
+  title: { default: title, template: "%s | Sajuni" },
   description: site.description,
-  applicationName: site.name,
+  applicationName: `${site.name} – Demo by Sajuni`,
   keywords: [
     "luxury boutique",
-    "designer boutique Kolkata",
+    "designer boutique",
     "bridal lehenga",
     "designer lehenga online",
     "Banarasi silk saree",
@@ -47,15 +47,15 @@ export const metadata: Metadata = {
     "festive wear for women",
     "ethnic wear boutique India",
   ],
-  authors: [{ name: site.name }],
-  creator: site.name,
+  authors: [{ name: "Saptashi Saha (Sajuni)", url: site.designerUrl }],
+  creator: "Sajuni",
   category: "fashion",
-  alternates: { canonical: "/" },
+  alternates: { canonical: `${site.url}/` },
   openGraph: {
     type: "website",
     locale: site.locale,
-    url: site.url,
-    siteName: site.name,
+    url: `${site.url}/`,
+    siteName: `${site.name} – Demo by Sajuni`,
     title,
     description: site.description,
   },
@@ -78,88 +78,11 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "ClothingStore",
-      "@id": `${site.url}/#store`,
-      name: site.name,
-      description: site.description,
-      url: site.url,
-      logo: `${site.url}/icon.svg`,
-      image: `${site.url}/opengraph-image`,
-      telephone: site.phone,
-      email: site.email,
-      priceRange: "₹₹₹",
-      foundingDate: site.founded,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: site.address.street,
-        addressLocality: site.address.city,
-        addressRegion: site.address.region,
-        postalCode: site.address.postalCode,
-        addressCountry: site.address.country,
-      },
-      openingHoursSpecification: {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        opens: "11:00",
-        closes: "20:00",
-      },
-      sameAs: [`https://instagram.com/${site.instagram}`],
-    },
-    {
-      "@type": "WebSite",
-      "@id": `${site.url}/#website`,
-      url: site.url,
-      name: site.name,
-      publisher: { "@id": `${site.url}/#store` },
-      inLanguage: "en-IN",
-    },
-    {
-      "@type": "ItemList",
-      name: "New Arrivals",
-      itemListElement: products.map((p, i) => ({
-        "@type": "ListItem",
-        position: i + 1,
-        item: {
-          "@type": "Product",
-          name: p.name,
-          image: `${p.image}?w=1200&q=80`,
-          description: `${p.name} — ${p.fabric}. Handcrafted at ${site.name}.`,
-          brand: { "@type": "Brand", name: site.name },
-          category: p.category,
-          offers: {
-            "@type": "Offer",
-            priceCurrency: "INR",
-            price: p.price,
-            availability: "https://schema.org/InStock",
-            url: `${site.url}/#new-arrivals`,
-          },
-        },
-      })),
-    },
-    {
-      "@type": "FAQPage",
-      mainEntity: faqs.map((f) => ({
-        "@type": "Question",
-        name: f.q,
-        acceptedAnswer: { "@type": "Answer", text: f.a },
-      })),
-    },
-  ],
-};
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-IN" suppressHydrationWarning className={`${cormorant.variable} ${manrope.variable} ${pinyon.variable}`}>
       <head>
         <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
-        />
       </head>
       <body>
         <a

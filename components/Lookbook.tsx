@@ -26,7 +26,7 @@ export default function Lookbook() {
               A season of <em className="text-rosegold">shaadi</em> stories
             </>
           }
-          intro="Six chapters, one wedding week — styled in our newest couture, shot across the palaces of Rajasthan."
+          intro="Six chapters, one wedding week — styled in our newest couture, styled for every wedding moment."
         />
         <div className="flex gap-3">
           <button onClick={() => scroll(-1)} aria-label="Previous looks" className="flex h-14 w-14 items-center justify-center rounded-full border border-wine/30 text-wine transition hover:bg-wine hover:text-ivory">
@@ -37,6 +37,7 @@ export default function Lookbook() {
           </button>
         </div>
       </div>
+      <p className="container-lux mt-6 text-[0.75rem] italic text-muted">Sample lookbook for demonstration.</p>
 
       <ul
         ref={track}

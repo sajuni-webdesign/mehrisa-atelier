@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import { IconArrow, IconSparkle } from "./Icons";
+import { useStore } from "./StoreProvider";
 
 export default function Newsletter() {
-  const [done, setDone] = useState(false);
+  const { showDemo } = useStore();
   return (
     <section aria-labelledby="circle-title" className="px-3 sm:px-6">
       <div className="grain relative isolate mx-auto max-w-[1440px] overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-rosegold via-mauve to-wine px-6 py-20 text-center text-ivory sm:px-12 lg:py-28">
@@ -16,35 +16,31 @@ export default function Newsletter() {
           Mehrisa Circle
         </h2>
         <p className="mx-auto mt-6 max-w-md text-petal/90">
-          First look at new collections, private trunk-show invites and a welcome gift of 10% off your first piece.
+          First look at new collections, private trunk-show invites and a welcome note (sample offer for demonstration).
         </p>
 
-        {done ? (
-          <p role="status" className="mx-auto mt-10 max-w-md rounded-full bg-ivory/15 px-6 py-4 font-display text-2xl italic">
-            Welcome to the circle, darling ♡
-          </p>
-        ) : (
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              setDone(true);
-            }}
-            className="mx-auto mt-10 flex max-w-lg flex-col gap-3 sm:flex-row sm:rounded-full sm:bg-ivory sm:p-1.5"
-          >
-            <label htmlFor="nl-email" className="sr-only">Email address</label>
-            <input
-              id="nl-email"
-              type="email"
-              required
-              autoComplete="email"
-              placeholder="Your email address"
-              className="flex-1 rounded-full bg-ivory px-6 py-4 text-sm text-ink placeholder:text-muted/70 focus:outline-none sm:bg-transparent"
-            />
-            <button type="submit" className="btn btn-primary btn-nudge !py-4">
-              Subscribe <IconArrow />
-            </button>
-          </form>
-        )}
+        <form
+          onSubmit={(e) => {
+            // Demo only: nothing is sent or stored — clear the field and show the demo notice.
+            e.preventDefault();
+            e.currentTarget.reset();
+            showDemo();
+          }}
+          className="mx-auto mt-10 flex max-w-lg flex-col gap-3 sm:flex-row sm:rounded-full sm:bg-ivory sm:p-1.5"
+        >
+          <label htmlFor="nl-email" className="sr-only">Email address</label>
+          <input
+            id="nl-email"
+            type="email"
+            required
+            autoComplete="email"
+            placeholder="Your email address"
+            className="flex-1 rounded-full bg-ivory px-6 py-4 text-sm text-ink placeholder:text-muted/70 focus:outline-none sm:bg-transparent"
+          />
+          <button type="submit" className="btn btn-primary btn-nudge !py-4">
+            Subscribe <IconArrow />
+          </button>
+        </form>
         <p className="mt-5 text-[0.65rem] uppercase tracking-[0.2em] text-petal/70">No spam · Unsubscribe anytime</p>
       </div>
     </section>

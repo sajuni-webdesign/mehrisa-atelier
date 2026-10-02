@@ -76,7 +76,7 @@ export default function HeroVideo() {
       </ol>
 
       {/* Chapter caption — mobile */}
-      <div aria-hidden className="absolute right-4 top-24 z-20 flex items-center gap-2 rounded-full border border-ivory/20 bg-plum/30 px-3 py-1.5 backdrop-blur-md lg:hidden">
+      <div aria-hidden className="absolute right-4 top-40 z-20 flex sm:top-36 items-center gap-2 rounded-full border border-ivory/20 bg-plum/30 px-3 py-1.5 backdrop-blur-md lg:hidden">
         <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-champagne" />
         <span key={active} className="intro-fade font-display text-sm italic text-ivory">
           {String(active + 1).padStart(2, "0")} · {chapters[active].title}

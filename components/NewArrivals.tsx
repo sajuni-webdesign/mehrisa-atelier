@@ -12,6 +12,7 @@ const filters = ["All", "Bridal", "Lehenga", "Saree", "Anarkali", "Indo-Western"
 
 export default function NewArrivals() {
   const [active, setActive] = useState<(typeof filters)[number]>("All");
+  const { showDemo } = useStore();
   const list = useMemo(() => (active === "All" ? products : products.filter((p) => p.category === active)), [active]);
 
   return (
@@ -45,7 +46,9 @@ export default function NewArrivals() {
           </div>
         </div>
 
-        <ul className="mt-14 grid grid-cols-2 gap-x-3 gap-y-10 sm:gap-x-5 lg:mt-16 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-14">
+        <p className="mt-8 text-[0.75rem] italic text-muted">Sample products and prices for demonstration – not for sale.</p>
+
+        <ul className="mt-8 grid grid-cols-2 gap-x-3 gap-y-10 sm:gap-x-5 lg:mt-16 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-14">
           {list.map((p, i) => (
             <Reveal as="li" key={p.id} delay={(i % 4) * 90}>
               <ProductCard p={p} priority={false} />
@@ -54,7 +57,7 @@ export default function NewArrivals() {
         </ul>
 
         <div className="mt-16 flex justify-center">
-          <a href="#collections" className="btn btn-halo text-wine before:bg-wine hover:text-ivory">View all 400+ pieces</a>
+          <button type="button" onClick={showDemo} className="btn btn-halo text-wine before:bg-wine hover:text-ivory">View all 400+ pieces</button>
         </div>
       </div>
     </section>
@@ -62,7 +65,7 @@ export default function NewArrivals() {
 }
 
 function ProductCard({ p, priority }: { p: Product; priority: boolean }) {
-  const { wishlist, toggleWishlist, addToBag } = useStore();
+  const { wishlist, toggleWishlist, showDemo } = useStore();
   const saved = wishlist.includes(p.id);
 
   return (
@@ -92,7 +95,7 @@ function ProductCard({ p, priority }: { p: Product; priority: boolean }) {
           <IconHeart filled={saved} width={18} height={18} />
         </button>
         <button
-          onClick={() => addToBag(p.id, p.name)}
+          onClick={showDemo}
           className="absolute inset-x-3 bottom-3 mr-12 flex items-center justify-center gap-2 rounded-full bg-wine/95 py-3 text-[0.6rem] font-semibold uppercase tracking-[0.2em] text-ivory opacity-100 transition-all duration-500 hover:bg-rosegold lg:translate-y-4 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100"
         >
           <IconPlus width={14} height={14} /> <span className="hidden sm:inline">Add to bag</span><span className="sm:hidden">Add</span>

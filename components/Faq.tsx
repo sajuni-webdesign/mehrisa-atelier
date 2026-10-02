@@ -16,7 +16,7 @@ export default function Faq() {
                 Questions, <em className="text-rosegold">answered</em>
               </>
             }
-            intro="Everything about appointments, customisation, shipping and care. Still curious? Our stylists reply within the hour."
+            intro="Everything about appointments, customisation, shipping and care. Sample FAQs for demonstration – contact Sajuni to build yours."
           />
         </div>
         <div className="lg:col-span-7">

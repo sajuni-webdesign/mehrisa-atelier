@@ -1,6 +1,7 @@
 import { site } from "@/lib/site";
 import { IconInstagram, IconPinterest, IconYoutube } from "./Icons";
 import { Mandala, Paisley } from "./Motif";
+import DemoButton from "./DemoButton";
 
 const cols = [
   { h: "Shop", links: ["Bridal Couture", "Lehengas", "Sarees", "Anarkali & Suits", "Indo-Western", "Kurtis"] },
@@ -9,7 +10,6 @@ const cols = [
 ];
 
 export default function Footer() {
-  const year = new Date().getFullYear();
   return (
     <footer className="relative isolate mt-24 overflow-hidden bg-plum pt-20 text-petal/80 lg:mt-36 lg:pt-28">
       <div aria-hidden className="zari-border absolute inset-x-0 top-0 h-2 opacity-70" />
@@ -20,16 +20,16 @@ export default function Footer() {
             <p className="font-display text-3xl tracking-[0.3em] text-ivory">MEHRISA</p>
             <p className="-mt-1 font-script text-2xl text-rose">atelier</p>
             <p className="mt-6 max-w-xs text-sm leading-relaxed">
-              Luxury Indian couture, handcrafted in Kolkata since {site.founded}. Bridal lehengas, handwoven sarees and
+              Luxury, handcrafted Indian couture. Bridal lehengas, handwoven sarees and
               festive wear for the modern woman.
             </p>
             <div className="mt-8 flex gap-3">
               {[
-                { I: IconInstagram, l: "Instagram", h: `https://instagram.com/${site.instagram}` },
-                { I: IconPinterest, l: "Pinterest", h: "https://pinterest.com" },
-                { I: IconYoutube, l: "YouTube", h: "https://youtube.com" },
-              ].map(({ I, l, h }) => (
-                <a key={l} href={h} target="_blank" rel="noopener noreferrer" aria-label={l} className="flex h-11 w-11 items-center justify-center rounded-full border border-ivory/15 text-ivory transition hover:border-champagne hover:bg-champagne hover:text-plum">
+                { I: IconInstagram, l: "Instagram" },
+                { I: IconPinterest, l: "Pinterest" },
+                { I: IconYoutube, l: "YouTube" },
+              ].map(({ I, l }) => (
+                <a key={l} href={site.designerUrl} target="_blank" rel="noopener" aria-label={`${l} (demo link to sajuni.in)`} className="flex h-11 w-11 items-center justify-center rounded-full border border-ivory/15 text-ivory transition hover:border-champagne hover:bg-champagne hover:text-plum">
                   <I />
                 </a>
               ))}
@@ -43,7 +43,11 @@ export default function Footer() {
                 <ul className="mt-5 space-y-3 text-sm">
                   {c.links.map((l) => (
                     <li key={l}>
-                      <a href="#top" className="link-underline transition-colors hover:text-ivory">{l}</a>
+                      {l === "Book Appointment" ? (
+                        <DemoButton className="link-underline text-left transition-colors hover:text-ivory">{l}</DemoButton>
+                      ) : (
+                        <a href="#top" className="link-underline transition-colors hover:text-ivory">{l}</a>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -52,13 +56,10 @@ export default function Footer() {
           </nav>
 
           <address className="not-italic lg:col-span-3">
-            <h2 className="font-sans text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-champagne">Visit the salon</h2>
-            <p className="mt-5 text-sm leading-relaxed">
-              {site.address.street}
-              <br />
-              {site.address.city}, {site.address.region} {site.address.postalCode}
-            </p>
+            <h2 className="font-sans text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-champagne">Contact the designer – Sajuni</h2>
+            <p className="mt-5 text-sm leading-relaxed">{site.address}</p>
             <p className="mt-4 text-sm">{site.hours}</p>
+            <p className="mt-1 text-[0.7rem] italic text-petal/60">Sample opening hours for demonstration.</p>
             <p className="mt-4 space-y-1 text-sm">
               <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="block text-ivory hover:text-champagne">{site.phone}</a>
               <a href={`mailto:${site.email}`} className="block text-ivory hover:text-champagne">{site.email}</a>
@@ -67,7 +68,12 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-ivory/10 py-8 text-xs sm:flex-row sm:items-center">
-          <p>© {year} {site.name}. Crafted with love in India.</p>
+          <p>
+            © Demo website designed by Sajuni ·{" "}
+            <a href={site.designerUrl} target="_blank" rel="noopener" className="text-champagne hover:text-ivory">
+              sajuni.in
+            </a>
+          </p>
           <p className="flex gap-6">
             <a href="#top" className="hover:text-ivory">Privacy</a>
             <a href="#top" className="hover:text-ivory">Terms</a>

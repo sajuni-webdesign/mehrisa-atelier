@@ -50,6 +50,7 @@ export default function Testimonials() {
           <p className="eyebrow flex items-center gap-3">
             <span className="h-px w-8 bg-rosegold" /> Love letters
           </p>
+          <p className="mt-2 text-[0.75rem] italic text-muted">Sample reviews shown for demonstration.</p>
           <h2 id="love-title" className="sr-only">What our brides say</h2>
 
           <div className="mt-8 grid" aria-live="polite">

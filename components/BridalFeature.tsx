@@ -3,10 +3,11 @@ import Reveal from "./Reveal";
 import { IconArrow } from "./Icons";
 import { img } from "@/lib/site";
 import SmartVideo from "./SmartVideo";
+import DemoButton from "./DemoButton";
 
 const promises = [
   ["400+", "hours of hand embroidery", "Every bridal lehenga is worked stitch by stitch by our karigars — zardozi, dabka, resham and pearl."],
-  ["24ct", "gold-dipped zari", "Heirloom-grade threads sourced from Varanasi & Surat, made to be handed down generations."],
+  ["24ct", "gold-dipped zari", "Heirloom-grade threads, made to be handed down generations."],
   ["∞", "lifetime alterations", "Your lehenga grows with you — re-fits, re-styling and care, complimentary for life."],
 ];
 
@@ -82,9 +83,9 @@ export default function BridalFeature() {
           </ul>
 
           <Reveal delay={600} className="mt-12 flex flex-wrap gap-4">
-            <a href="#bespoke" className="btn btn-light btn-glow btn-nudge">
+            <DemoButton className="btn btn-light btn-glow btn-nudge">
               Begin your bridal journey <IconArrow />
-            </a>
+            </DemoButton>
           </Reveal>
         </div>
       </div>

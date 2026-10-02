@@ -4,5 +4,5 @@ import { site } from "@/lib/site";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [{ url: site.url, lastModified: new Date(), changeFrequency: "weekly", priority: 1 }];
+  return [{ url: `${site.url}/`, lastModified: new Date(), changeFrequency: "weekly", priority: 1 }];
 }

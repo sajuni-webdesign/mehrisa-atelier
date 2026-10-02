@@ -30,7 +30,7 @@ export default function Collections() {
           <Reveal delay={200} className="max-w-sm">
             <p className="text-[0.95rem] leading-relaxed text-muted">
               From the first haldi to the final vidaai — six curated worlds of Indian couture, each piece finished by hand in
-              our Kolkata atelier.
+              our atelier.
             </p>
           </Reveal>
         </div>

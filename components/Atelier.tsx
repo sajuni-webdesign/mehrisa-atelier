@@ -29,10 +29,11 @@ export default function Atelier() {
           </Reveal>
           <Reveal delay={200}>
             <p className="mt-6 leading-relaxed text-muted">
-              Behind a blue door on Camac Street, 180 karigars — many from families who embroidered for royal courts — work
+              Behind a blue door, our karigars work
               beside our master tailors. Seams are sewn with precision; every motif, sequin and pearl is placed by hand —
               with needles, adda frames, patience and generations of instinct.
             </p>
+            <p className="mt-3 text-[0.75rem] italic text-muted">Sample brand story for demonstration.</p>
           </Reveal>
           <Reveal delay={280}>
             <ul className="mt-8 flex flex-wrap gap-2" aria-label="Signature crafts">
@@ -54,6 +55,7 @@ export default function Atelier() {
               </Reveal>
             ))}
           </dl>
+          <p className="mt-6 text-[0.75rem] italic text-muted">Sample figures for demonstration.</p>
         </div>
 
         <div className="relative order-1 lg:order-2 lg:col-span-7">

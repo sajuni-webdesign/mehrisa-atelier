@@ -1,9 +1,8 @@
 import { ImageResponse } from "next/og";
-import { site } from "@/lib/site";
 
 export const dynamic = "force-static";
 
-export const alt = `${site.name} — ${site.tagline}`;
+export const alt = "Boutique Website Demo by Sajuni";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -20,10 +19,10 @@ export default function OgImage() {
         }}
       >
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 80px", flex: 1 }}>
-          <div style={{ fontSize: 22, letterSpacing: 8, color: "#b76e79", textTransform: "uppercase" }}>Luxury Indian Couture</div>
+          <div style={{ fontSize: 22, letterSpacing: 8, color: "#b76e79", textTransform: "uppercase" }}>Website design demo</div>
           <div style={{ fontSize: 110, color: "#5b1a32", letterSpacing: 18, marginTop: 20 }}>MEHRISA</div>
-          <div style={{ fontSize: 44, color: "#8e4a5c", fontStyle: "italic", marginTop: 6 }}>Couture, woven in grace.</div>
-          <div style={{ fontSize: 24, color: "#7a5f66", marginTop: 36 }}>Bridal · Lehengas · Sarees · Festive Couture</div>
+          <div style={{ fontSize: 44, color: "#8e4a5c", fontStyle: "italic", marginTop: 6 }}>Boutique Website Demo by Sajuni</div>
+          <div style={{ fontSize: 24, color: "#7a5f66", marginTop: 36 }}>Sample content · sajuni.in</div>
         </div>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img

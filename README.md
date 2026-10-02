@@ -31,7 +31,7 @@ The phone / WhatsApp numbers there are placeholders — replace before going liv
 ## SEO & performance
 - Fully static pre-render, zero animation libraries (IntersectionObserver + CSS only)
 - Metadata, Open Graph, Twitter cards, canonical, auto-generated OG image
-- JSON-LD: `ClothingStore`, `WebSite`, `ItemList` of `Product`s with offers, `FAQPage`
+- No structured data: this is a labelled demo, so no business / product / offer / FAQ schema is published
 - `sitemap.xml`, `robots.txt`, web manifest, SVG favicon
 - `next/font` self-hosted fonts, responsive Unsplash CDN images (AVIF/WebP), lazy videos that pause off-screen
 - Honors `prefers-reduced-motion`, skip link, semantic landmarks, AA-contrast text

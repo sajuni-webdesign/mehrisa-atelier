@@ -5,22 +5,16 @@ export const site = {
   shortName: "Mehrisa",
   tagline: "Couture, woven in grace",
   description:
-    "Mehrisa Atelier is a luxury Indian couture boutique for bridal lehengas, handwoven Banarasi sarees, anarkalis, Indo-western gowns and festive wear — handcrafted by master artisans and tailored to you.",
+    "Live demo of a luxury Indian boutique & bridal couture website built with Next.js & React by Sajuni – collections, lookbook, bespoke appointments and WhatsApp enquiries. Want a website like this for your boutique? Contact Saptashi Saha.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://mehrisa.sajuni.in",
   locale: "en_IN",
-  email: "hello@mehrisa.in",
-  phone: "+91 98300 00000",
-  whatsapp: "919830000000",
-  instagram: "mehrisa.atelier",
-  address: {
-    street: "14 Camac Street, 2nd Floor",
-    city: "Kolkata",
-    region: "West Bengal",
-    postalCode: "700017",
-    country: "IN",
-  },
+  email: "admin@sajuni.in",
+  phone: "+91 9387104400",
+  whatsappUrl:
+    "https://wa.me/919387104400?text=Hi%20Sajuni!%20I%20saw%20your%20boutique%20website%20demo%20and%20want%20a%20website%20like%20this.",
+  designerUrl: "https://sajuni.in",
+  address: "Demo website by Sajuni · Silchar, Assam",
   hours: "Tue – Sun · 11:00 am – 8:00 pm",
-  founded: "2014",
 };
 
 /** Unsplash photo id → used by the custom image loader. */
@@ -264,7 +258,7 @@ export const faqs = [
   },
   {
     q: "What is your return and alteration policy?",
-    a: "Ready-to-wear pieces can be exchanged within 7 days of delivery. Made-to-order and bridal pieces are final sale, but include complimentary lifetime alterations at our Kolkata atelier.",
+    a: "Ready-to-wear pieces can be exchanged within 7 days of delivery. Made-to-order and bridal pieces are final sale, but include complimentary lifetime alterations at our atelier.",
   },
 ];
 
